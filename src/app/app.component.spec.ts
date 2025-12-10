@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'QR-scan'`, () => {
+  it(`should have as title 'online-reminder-system'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('QR-scan');
+    expect(app.title).toEqual('online-reminder-system');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('QR-scan app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('online-reminder-system app is running!');
   });
 });

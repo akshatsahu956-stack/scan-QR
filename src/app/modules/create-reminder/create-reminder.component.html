@@ -1,0 +1,15 @@
+<div>
+  <h2>Create Reminder</h2>
+  <form (ngSubmit)="onCreateReminder()">
+    <label for="title">Title:</label>
+    <input type="text" id="title" [(ngModel)]="title" name="title" required />
+
+    <label for="description">Description:</label>
+    <input type="text" id="description" [(ngModel)]="description" name="description" />
+
+    <label for="date">Date:</label>
+    <input type="datetime-local" id="date" [min]="minDate"  [(ngModel)]="date" name="date" required />
+
+    <button type="submit">Create Reminder</button>
+  </form>
+</div>

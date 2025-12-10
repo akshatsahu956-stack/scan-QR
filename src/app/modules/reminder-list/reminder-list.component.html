@@ -1,0 +1,36 @@
+<div class="reminder-container">
+  <h2>Upcoming Reminders</h2>
+
+  <ng-container *ngIf="loading; else loaded">
+    <div class="loading">
+      <mat-spinner diameter="40"></mat-spinner>
+      <p>Loading reminders...</p>
+    </div>
+  </ng-container>
+
+  <ng-template #loaded>
+    <div *ngIf="reminders.length > 0; else noReminders">
+      <mat-card *ngFor="let reminder of reminders" class="reminder-card">
+        <mat-card-header>
+          <mat-card-title>{{ reminder.title }}</mat-card-title>
+          <mat-card-subtitle>{{ reminder.date | date: 'medium' }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ reminder.description }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <ng-template #noReminders>
+      <p class="empty-state">You have no upcoming reminders.</p>
+    </ng-template>
+  </ng-template>
+
+  <div class="actions">
+<button mat-raised-button color="primary" class="fancy-btn" routerLink="/create-reminder">
+  <mat-icon class="btn-icon">add</mat-icon>
+  <span>Create Reminder</span>
+</button>
+
+  </div>
+</div>

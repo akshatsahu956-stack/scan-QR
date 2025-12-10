@@ -1,0 +1,61 @@
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$hover-color: #f39c12;
+$font-family: 'Arial', sans-serif;
+$button-padding: 12px 24px;
+$border-radius: 8px;
+$transition-speed: 0.3s;
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.ui-button {
+  padding: $button-padding;
+  font-size: 16px;
+  font-family: $font-family;
+  cursor: pointer;
+  border: none;
+  border-radius: $border-radius;
+  outline: none;
+  text-align: center;
+  transition: background-color $transition-speed ease, transform $transition-speed ease;
+
+  &.generate-qr {
+    background-color: $primary-color;
+    color: white;
+  }
+
+  &.component-scan {
+    background-color: $secondary-color;
+    color: white;
+  }
+
+  &.box-packing {
+    background-color: #e74c3c;
+    color: white;
+  }
+
+  &.data-history {
+    background-color: #f39c12;
+    color: white;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+}

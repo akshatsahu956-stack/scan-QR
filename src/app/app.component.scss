@@ -1,0 +1,25 @@
+.header-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+
+  .app-title {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 20px;
+
+    mat-icon {
+      margin-right: 8px;
+    }
+
+    span {
+      white-space: nowrap;
+    }
+  }
+
+}
