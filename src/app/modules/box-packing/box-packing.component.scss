@@ -1,0 +1,38 @@
+.box-packing {
+  max-width: 700px;
+  margin: auto;
+}
+
+.select, .scan-input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0 20px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.component-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+
+  th, td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+.tick {
+  color: #22c55e;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.pending {
+  color: #e11d48;
+  font-weight: 600;
+}
+
+.scan-box {
+  margin-top: 20px;
+}

@@ -1,1 +1,48 @@
-<p>box-packing works!</p>
+<div class="box-packing">
+
+  <!-- PRODUCT DROPDOWN -->
+  <div class="form-group">
+    <label>Select Product</label>
+    <select class="select" [(ngModel)]="selectedProduct" (change)="loadComponents()">
+      <option value="" disabled selected>Select</option>
+      <option *ngFor="let p of products" [value]="p.name">{{ p.name }}</option>
+    </select>
+  </div>
+
+  <!-- COMPONENT TABLE -->
+  <table *ngIf="components.length > 0" class="component-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Component Name</th>
+        <th>Barcode</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let c of components; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ c.name }}</td>
+        <td>{{ c.barcode }}</td>
+        <td>
+          <span *ngIf="c.scanned" class="tick">✔️</span>
+          <span *ngIf="!c.scanned" class="pending">Pending</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SCAN INPUT -->
+  <div *ngIf="components.length" class="scan-box">
+    <label>Scan Component Barcode</label>
+    <input
+      type="text"
+      class="scan-input"
+      placeholder="Scan QR / Barcode"
+      [(ngModel)]="scanInput"
+      (keyup.enter)="verifyScan()"
+    />
+  </div>
+
+</div>

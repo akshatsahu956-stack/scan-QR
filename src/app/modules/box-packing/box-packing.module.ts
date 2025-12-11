@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { BoxPackingRoutingModule } from './box-packing-routing.module';
 import { BoxPackingComponent } from './box-packing.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,9 @@ import { BoxPackingComponent } from './box-packing.component';
   ],
   imports: [
     CommonModule,
-    BoxPackingRoutingModule
+    BoxPackingRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class BoxPackingModule { }

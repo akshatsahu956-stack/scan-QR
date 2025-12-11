@@ -1,0 +1,189 @@
+:root {
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --success: #10b981;
+  --danger: #ef4444;
+  --pending: #f59e0b;
+}
+
+.qr-history {
+  max-width: 980px;
+  margin: 20px auto;
+  padding: 18px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #0f172a;
+  background: linear-gradient(180deg, var(--bg), #fff);
+  border-radius: 8px;
+
+  &__header {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+
+    .qr-history__title {
+      h2 { margin: 0; font-size: 1.15rem; }
+      .muted { margin: 4px 0 0; color: var(--muted); font-size: 0.9rem; }
+    }
+
+    & .qr-history__controls {
+      display:flex;
+      gap:8px;
+      align-items:center;
+
+      .search {
+        background: var(--card);
+        display:flex;
+        align-items:center;
+        padding:6px 10px;
+        border-radius:8px;
+        box-shadow: 0 6px 18px rgba(15,23,42,0.04);
+
+        input {
+          border: none;
+          outline: none;
+          min-width: 200px;
+          font-size: 0.95rem;
+        }
+      }
+
+      select {
+        border-radius:8px;
+        padding:8px 10px;
+        border: 1px solid #e6eef8;
+        background: var(--card);
+        font-weight:600;
+      }
+    }
+  }
+
+  &__stats {
+    display:flex;
+    gap:10px;
+    margin-bottom: 12px;
+
+    .stat {
+      background: var(--card);
+      padding:8px 12px;
+      border-radius:8px;
+      box-shadow: 0 6px 18px rgba(15,23,42,0.03);
+      font-weight:700;
+      color: var(--muted);
+      small { color: var(--muted); }
+    }
+  }
+
+  &__list {
+    list-style:none;
+    padding:0;
+    margin:0;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .scan-item {
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:12px;
+    background: var(--card);
+    border-radius:10px;
+    box-shadow: 0 6px 18px rgba(15,23,42,0.04);
+
+    &__thumb {
+      width: 96px;
+      height: 96px;
+      border-radius:8px;
+      overflow:hidden;
+      background: linear-gradient(180deg,#f4f8ff,#eef6ff);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      img { width:100%; height:100%; object-fit:cover; display:block; }
+    }
+
+    &__body {
+      flex:1 1 auto;
+      min-width:0;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+
+      & .scan-item__top {
+        display:flex;
+        justify-content:space-between;
+        align-items:flex-start;
+        gap:12px;
+
+        .scan-item__name {
+          font-weight:700;
+          font-size:1rem;
+          white-space:nowrap;
+          overflow:hidden;
+          text-overflow:ellipsis;
+          max-width: 520px;
+        }
+
+        .scan-item__badge {
+          padding:6px 10px;
+          border-radius:999px;
+          font-weight:700;
+          font-size:0.75rem;
+          color:#fff;
+          &.badge--success { background: var(--success); }
+          &.badge--pending { background: var(--pending); color:#000; }
+          &.badge--failed { background: var(--danger); }
+        }
+      }
+
+      & .scan-item__meta {
+        display:flex;
+        gap:12px;
+        align-items:center;
+        flex-wrap:wrap;
+        color: var(--muted);
+        font-size:0.92rem;
+
+        .meta-col { display:flex; gap:6px; align-items:center; }
+        .meta-val { color: #0f172a; font-weight:600; }
+      }
+    }
+
+    &__actions {
+      display:flex;
+      gap:8px;
+      align-items:center;
+
+      .btn {
+        padding:8px 10px;
+        border-radius:8px;
+        border: 1px solid #e6eef8;
+        background:transparent;
+        font-weight:700;
+        cursor:pointer;
+      }
+      .btn--ghost { color: #0f172a; background: transparent; }
+      .btn--primary { background: var(--accent); color: #fff; border: none; }
+    }
+  }
+
+  &__empty {
+    text-align:center;
+    padding:24px;
+    color: var(--muted);
+  }
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .qr-history { padding:12px; }
+  .scan-item { flex-direction:row; }
+  .scan-item__thumb { width:72px; height:72px; }
+  .qr-history__header { flex-direction:column; align-items:flex-start; gap:8px; }
+  .qr-history__controls { align-self:stretch; justify-content:flex-start; width:100%; gap:6px; }
+}

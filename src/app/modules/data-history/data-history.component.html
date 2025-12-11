@@ -1,1 +1,85 @@
-<p>data-history works!</p>
+<section class="qr-history">
+  <header class="qr-history__header">
+    <div class="qr-history__title">
+      <h2>QR Scan History</h2>
+      <p class="muted">Recent products scanned via QR — audit trail</p>
+    </div>
+
+    <div class="qr-history__controls">
+      <div class="search">
+        <input type="search" placeholder="Search name or barcode" aria-label="Search scans" />
+      </div>
+      <select aria-label="Filter status">
+        <option value="all">All</option>
+        <option value="success">Success</option>
+        <option value="pending">Pending</option>
+        <option value="failed">Failed</option>
+      </select>
+    </div>
+  </header>
+
+  <div class="qr-history__stats">
+    <div class="stat">Total: <strong>24</strong></div>
+    <div class="stat">Success: <strong>18</strong></div>
+    <div class="stat">Pending: <strong>3</strong></div>
+    <div class="stat">Failed: <strong>3</strong></div>
+  </div>
+
+  <ul class="qr-history__list">
+    <!-- repeat this <li> with *ngFor -->
+    <li class="scan-item">
+      <div class="scan-item__thumb">
+        <img src="https://via.placeholder.com/96" alt="product image" />
+      </div>
+
+      <div class="scan-item__body">
+        <div class="scan-item__top">
+          <div class="scan-item__name">Industrial Drill 500W</div>
+          <div class="scan-item__badge badge--success">SUCCESS</div>
+        </div>
+
+        <div class="scan-item__meta">
+          <div class="meta-col">Barcode: <span class="meta-val">DRL-500-7621</span></div>
+          <div class="meta-col">Scanned by: <span class="meta-val">A. Kumar</span></div>
+          <div class="meta-col">Location: <span class="meta-val">Warehouse A</span></div>
+          <div class="meta-col">Time: <span class="meta-val">2025-12-10 14:22</span></div>
+        </div>
+      </div>
+
+      <div class="scan-item__actions">
+        <button class="btn btn--ghost" aria-label="View details">View</button>
+        <button class="btn btn--primary" aria-label="Rescan">Rescan</button>
+      </div>
+    </li>
+
+    <!-- another example -->
+    <li class="scan-item">
+      <div class="scan-item__thumb">
+        <img src="https://via.placeholder.com/96" alt="product image" />
+      </div>
+
+      <div class="scan-item__body">
+        <div class="scan-item__top">
+          <div class="scan-item__name">Safety Helmet - Blue</div>
+          <div class="scan-item__badge badge--pending">PENDING</div>
+        </div>
+
+        <div class="scan-item__meta">
+          <div class="meta-col">Barcode: <span class="meta-val">HLM-BLU-102</span></div>
+          <div class="meta-col">Scanned by: <span class="meta-val">R. Singh</span></div>
+          <div class="meta-col">Location: <span class="meta-val">Dispatch Bay</span></div>
+          <div class="meta-col">Time: <span class="meta-val">2025-12-09 09:10</span></div>
+        </div>
+      </div>
+
+      <div class="scan-item__actions">
+        <button class="btn btn--ghost" aria-label="View details">View</button>
+        <button class="btn btn--primary" aria-label="Rescan">Rescan</button>
+      </div>
+    </li>
+  </ul>
+
+  <div class="qr-history__empty" hidden>
+    <p>No scans yet — scan a product to see history here.</p>
+  </div>
+</section>
